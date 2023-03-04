@@ -40,14 +40,14 @@ public class AdminServiceImpl implements AdminService {
         serviceProvider.setName(providerName);
         serviceProvider.setAdmin(admin);
 
-        List<ServiceProvider>serviceProviderList;
+        List<ServiceProvider>serviceProviders;
 
-        if(admin.getServiceProviderList()== null)
-            serviceProviderList= new ArrayList<>();
+        if(admin.serviceProviders()== null)
+            serviceProviders= new ArrayList<>();
         else
-            serviceProviderList= admin.getServiceProviderList();
+            serviceProviders= admin.serviceProviders();
 
-        serviceProviderList.add(serviceProvider);
+        serviceProviders.add(serviceProvider);
 
         adminRepository1.save(admin);
         serviceProviderRepository1.save(serviceProvider);

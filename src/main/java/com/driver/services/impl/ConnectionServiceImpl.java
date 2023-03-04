@@ -22,9 +22,9 @@ public class ConnectionServiceImpl implements ConnectionService {
     @Override
     public User connect(int userId, String countryName) throws Exception{
         User user= userRepository2.findById(userId).get();
-        if(!user.isConnected())
+        if(!user.getConnected())
             throw new Exception("Already connected");
-        if(user.getCountry().toString() == countryName)
+        if(user.getOriginalCountry().toString() == countryName)
             return user;
 
         for (ServiceProvider serviceProvider : user.getServiceProviderList())
@@ -44,7 +44,7 @@ public class ConnectionServiceImpl implements ConnectionService {
     public User disconnect(int userId) throws Exception {
 
         User user= userRepository2.findById(userId).get();
-        if(user.isConnected()== false)
+        if(user.getConnected()== false)
             throw new Exception("Already disconnected");
         else
             user.setMaskedIp(null);
@@ -61,9 +61,9 @@ public class ConnectionServiceImpl implements ConnectionService {
         if(userReceiver ==null || userSender== null)
             throw new Exception("Cannot establish communication");
 
-        if(userSender.getCountry() != userReceiver.getCountry())
+        if(userSender.getOriginalCountry() != userReceiver.getOriginalCountry())
         {
-            connect(senderId,userSender.getCountry().toString());
+            connect(senderId,userSender.getOriginalCountry().toString());
         }
         return  userSender;
     }
