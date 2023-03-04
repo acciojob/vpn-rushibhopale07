@@ -71,7 +71,7 @@ public class ConnectionServiceImpl implements ConnectionService {
 
             userRepository2.save(user);
             serviceProviderRepository2.save(serviceProvider);
-            connectionRepository2.save(connection);
+
 
             return user;
         }
