@@ -30,7 +30,7 @@ public class User {
     public User() {
     }
 
-    public User(int id, String username, String password, String originalIp, String maskedIp, boolean connected, List<Connection> connectionList, List<ServiceProvider> serviceProviderList, Country originalCountry) {
+    public User(int id, String username, String password, String originalIp, String maskedIp, Boolean connected, List<Connection> connectionList, List<ServiceProvider> serviceProviderList, Country originalCountry) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -86,7 +86,7 @@ public class User {
         return connected;
     }
 
-    public void setConnected(boolean connected) {
+    public void setConnected(Boolean connected) {
         this.connected = connected;
     }
 
