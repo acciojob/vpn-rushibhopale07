@@ -28,7 +28,7 @@ public class ServiceProvider {
     private List<Connection> connectionList = new ArrayList<>();
 
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "serviceProviderList", cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<>();
 
     public ServiceProvider(int id, String name, Admin admin, List<Country> countryList, List<Connection> connectionList, List<User> users) {
