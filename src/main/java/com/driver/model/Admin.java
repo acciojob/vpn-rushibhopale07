@@ -51,11 +51,11 @@ public class Admin {
         this.password = password;
     }
 
-    public List<ServiceProvider> serviceProviders() {
+    public List<ServiceProvider> getServiceProviders() {
         return serviceProviders;
     }
 
-    public void serviceProviders(List<ServiceProvider> serviceProviders) {
+    public void setServiceProviders(List<ServiceProvider> serviceProviders) {
         this.serviceProviders = serviceProviders;
     }
 }

@@ -42,10 +42,10 @@ public class AdminServiceImpl implements AdminService {
 
         List<ServiceProvider>serviceProviders;
 
-        if(admin.serviceProviders()== null)
+        if(admin.getServiceProviders()== null)
             serviceProviders= new ArrayList<>();
         else
-            serviceProviders= admin.serviceProviders();
+            serviceProviders= admin.getServiceProviders();
 
         serviceProviders.add(serviceProvider);
 
