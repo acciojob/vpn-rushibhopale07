@@ -14,7 +14,7 @@ public class Admin {
     private String username;
     private String password;
 
-    @OneToMany(mappedBy = "serviceProvider", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
     private List<ServiceProvider> serviceProviders = new ArrayList<>();
 
     public Admin(int id, String username, String password, List<ServiceProvider> serviceProviders) {
